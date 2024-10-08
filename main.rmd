@@ -1,0 +1,25 @@
+
+# Firstly, let's view our data in the CSV
+```{r}
+# Load necessary library
+library(readr)
+
+# Read the CSV file
+data <- read_csv("Impact_of_Remote_Work_on_Mental_Health.csv")
+
+# Display the head of the data
+head(data)
+```
+
+```{r}
+# install.packages("readr")
+```
+
+```{r}
+# We need TO VISUALIZE THE DATA LIKE BOX PLOT , VIOLIN PLOT , HISTOGRAM , BAR GRAPH
+# also need to create a random sample and calculate mean,median,mode,standard deviation
+```
+
+```{r}
+# bootstap , point of estimate , estimate interval ,t.test
+```
