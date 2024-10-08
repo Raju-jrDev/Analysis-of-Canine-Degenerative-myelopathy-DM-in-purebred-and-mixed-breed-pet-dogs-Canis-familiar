@@ -16,6 +16,7 @@ head(data)
 ```
 
 ```{r}
+# data cleaning , data wrangling , data transformation
 # We need TO VISUALIZE THE DATA LIKE BOX PLOT , VIOLIN PLOT , HISTOGRAM , BAR GRAPH
 # also need to create a random sample and calculate mean,median,mode,standard deviation
 ```
