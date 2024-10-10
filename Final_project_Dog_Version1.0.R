@@ -1,4 +1,4 @@
-dog_data <- read.csv("C:/Users/lijia/OneDrive/桌面/Study in University Of Calgary/DATA 602/Final Project/Full_genotype_dataset.csv")
+dog_data <- read.csv("C:/Users/pskra/Desktop/DATA 602/project/DATA-602-PROJECT-L03-6/Full_genotype_dataset.csv")
 
 # filter data only in America
 library(dplyr)
