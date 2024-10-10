@@ -4,12 +4,10 @@
 library(readr)
 
 # Read the CSV file
-data <- read_csv("Impact_of_Remote_Work_on_Mental_Health.csv")
-data_1 <- read_csv("Full_genotype_dataset.csv")
+data <- read_csv("Full_genotype_dataset.csv")
 
 # Display the head of the data
 head(data)
-head(data_1)
 ```
 
 ```{r}
@@ -18,11 +16,9 @@ head(data_1)
 
 ```{r}
 # data cleaning , data wrangling , data transformation
-# also need to create a random sample and calculate mean,median,mode,standard deviation
-# linear regression
+
 ```
 
 ```{r}
-# bootstap , point of estimate , estimate interval ,t.test,chi.square test           choose any 2
 # population ,variable , parameter 
 ```
