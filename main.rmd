@@ -142,20 +142,13 @@ The variable & parameters:
 
 In our sample, we focus on pet dogs (mixed and pure breeds) owned by dog owners/families in the United States and their disease degenerative myelopathy (DM) genotypes.  
 
-Two proportions are considered:  
+Two parameters are considered:  
 
-Number of pure breeds owned by owners who live or have their primary residence in the United States and  
+Proportion of mixed breeds: Proportion of diseased genotypes (A2/A2) of the disease Canine Degenerative Myelopathy (DM).  
 
-Number of mixed breeds owned by owners by owners who live or have their primary residence in the United States 
-
-Following that the two relevant variables in our research are: 
-
-Proportion 1: Number of diseased genotypes (A2/A2) of the disease Canine Degenerative Myelopathy (DM).  
-
-Proportion 2: Number of diseased genotypes (A2/A2) of the disease Canine Degenerative Myelopathy (DM). 
+Proportion of pure breeds: Proportion of diseased genotypes (A2/A2) of the disease Canine Degenerative Myelopathy (DM). 
 
   
-
 Statistical analysis:
 
 To test that mixed breed, have a higher incidence of diseased gene combinations than purebred dogs, two methodological approaches were applied: 
@@ -240,14 +233,12 @@ proportion_A1_pure <- (Observed_A1_A2_pure + Observed_A1_A1_pure*2)/(total_rows_
 proportion_A2_pure <- (Observed_A1_A2_pure + Observed_A2_A2_pure*2)/(total_rows_pure*2)
 proportion_A1_mixed <- (Observed_A1_A2_mixed + Observed_A1_A1_mixed*2)/(total_rows_mixed*2)
 proportion_A2_mixed <- (Observed_A1_A2_mixed + Observed_A2_A2_mixed*2)/(total_rows_mixed*2)
-proportion_A1_pure
-proportion_A2_pure
-# Do Chi-square Test in pure subgroup
+# Chi-square Test in pure subgroup
 Expected_A1_A1_pure = (proportion_A1_pure^2)*total_rows_pure
 Expected_A1_A2_pure = (2*proportion_A1_pure*proportion_A2_pure)*total_rows_pure
 Expected_A2_A2_pure = (proportion_A2_pure^2)*total_rows_pure
 x_pure=c(Observed_A1_A1_pure,Observed_A1_A2_pure,Observed_A2_A2_pure); p_pure=c(Expected_A1_A1_pure,Expected_A1_A2_pure,Expected_A2_A2_pure)/total_rows_pure
-chisq.test(x_pure, p=p_pure) # X-squared = 528.66, df = 2, p-value < 2.2e-16
+chisq.test(x_pure, p=p_pure)
 ```
 Result: 
 
@@ -263,12 +254,12 @@ Null hypothesis 2: In mixed dog population, the observed number of dogs for each
 
 Alternative hypothesis 2: Mixed dog population is not in Hard-Weinberg equilibrium. 
 ```{r}
-# Do Chi-square Test in mixed subgroup
+# Chi-square Test in mixed subgroup
 Expected_A1_A1_mixed = (proportion_A1_mixed^2)*total_rows_mixed
 Expected_A1_A2_mixed = (2*proportion_A1_mixed*proportion_A2_mixed)*total_rows_mixed
 Expected_A2_A2_mixed = (proportion_A2_mixed^2)*total_rows_mixed
 x_mixed=c(Observed_A1_A1_mixed,Observed_A1_A2_mixed,Observed_A2_A2_mixed); p_mixed=c(Expected_A1_A1_mixed,Expected_A1_A2_mixed,Expected_A2_A2_mixed)/total_rows_mixed
-chisq.test(x_mixed, p=p_mixed) # X-squared = 82.63, df = 2, p-value < 2.2e-16
+chisq.test(x_mixed, p=p_mixed)
 ```
 
 Result: 
