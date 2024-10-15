@@ -46,7 +46,7 @@ However, we will focus our analysis on one of the most common progressive neurod
 
 **Data collection** 
 
-<u>Population:</u>
+*Population:*
 
 The total population we intend to examine, includes all diseased genotypes of degenerative myelopathy (DM) in domestic dogs (Canis familiaris) whose owners/families live/have their primary residence in the United States. The dogs can be mixed breed or purebred as long as they are kept as pets by owners/families who live/primarily reside in the United States.  
 
