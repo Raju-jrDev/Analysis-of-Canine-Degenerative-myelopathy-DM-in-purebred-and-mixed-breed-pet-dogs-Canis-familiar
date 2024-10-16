@@ -46,13 +46,13 @@ However, we will focus our analysis on one of the most common progressive neurod
 
 **Data collection** 
 
-<u>Population:</u>
+**Population:**
 
 The total population we intend to examine, includes all diseased genotypes of degenerative myelopathy (DM) in domestic dogs (Canis familiaris) whose owners/families live/have their primary residence in the United States. The dogs can be mixed breed or purebred as long as they are kept as pets by owners/families who live/primarily reside in the United States.  
 
   
 
-<u>Raw Data:</u>
+**Raw Data:**
 
 We found our original raw dataset in Dryad (Donner et al., 2019). Overall, our dataset contains information about dogs, the countries of their owners, the dog breeds and the healthy or diseased genetic composition. The diseased genetic composition is examined in relation to 152 genetic diseases (one gene has the disease and the other does not, both genes have the disease neither gene has the disease). In genetic research, it is considered a healthy combination/genotype if neither or one genes have the disease, while it is considered a diseased combination/genotype if both genes have the diseased gene (Claussnitzer et al., 2020). 
 
@@ -81,13 +81,13 @@ dog_data <- read_csv("C:/Users/pskra/Desktop/DATA 602/project/DATA-602-PROJECT-L
 head(dog_data)
 ```
 
-<u>Sample:</u>
+**Sample:**
 
 In relation to our population, we are only interested in the sample data of the diseased genotypes of dogs in the United States. Since we were only interested in the pet dogs owned in the United States, we filtered our data and kept 85,074 samples from domestic dogs in the United States. Among the U.S. data, there were 77,048 samples for mixed-breed dogs and 7,542 purebred dogs.  
 
 Furthermore, in our data, A1 stands for the dominant allele (normal allele) and A2 for the recessive allele (defective allele). Since the A1 allele is dominant, this means that an individual with A1/A1 genotype and A1/A2 (although this type of dog has a defective allele) will not show DM symptoms (healthy genotypes), which represents healthy dogs. The individual with the A2/A2 genotype suffers from degenerative myelopathy (DM) and the symptoms do not appear until late adulthood (diseased genotype). For our analysis, the DM disease genotypes are filtered accordingly. 
 
-<u>Reliability and Validity:</u>
+**Reliability and Validity:**
 
 The responsible handling of data plays a crucial role, especially when it comes to personal health data. For example, the anonymized data sets were created with the consent of those who provided the data (in this case the dog owners) to protect private data.  
 
@@ -136,12 +136,13 @@ pure_breed <- cleaned_dog_USA_data %>%
   filter(Breed != "Mixed breed")
 ```
 
-<u>Two-sample proportion test and Confidence interval:</u> 
+**Two-sample proportion test and Confidence interval:**
 
-The variable & parameters: 
+**The variable & parameters:** 
 
 In our sample, we focus on pet dogs (mixed and pure breeds) owned by dog owners/families in the United States and their disease degenerative myelopathy (DM) genotypes.  
 
+<<<<<<< HEAD
 Variables: 
 
 Dog breeds: Two categories - Pure Breed dogs and Mixed breed dogs 
@@ -149,20 +150,23 @@ Dog breeds: Two categories - Pure Breed dogs and Mixed breed dogs
 Degenerative Myelopathy genes: Measuring three genotype class - Healthy  Homozygous, Healthy Heterozygous, Unhealthy Homozygous 
 
 Two parameters are considered:  
+=======
+**Two parameters are considered:** 
+>>>>>>> a494478e173b6d4757ebbb1fedd33ec33282cf09
 
 Proportion of mixed breeds: Proportion of diseased genotypes (A2/A2) of the disease Canine Degenerative Myelopathy (DM).  
 
 Proportion of pure breeds: Proportion of diseased genotypes (A2/A2) of the disease Canine Degenerative Myelopathy (DM). 
 
   
-Statistical analysis:
+**Statistical analysis:**
 
 To test that mixed breed, have a higher incidence of diseased gene combinations than purebred dogs, two methodological approaches were applied: 
 
 Due to concerns about the “Reliability and Validity” of the different populations and the large sampling bias mentioned in the “Issue” section, a two-sample test for comparing two population proportions was chosen. This provides information on the frequency range in which the DM disease genotype occurs with 95% certainty in the entire population of purebred/mixed breed dogs in the USA. Further, we will analyse if the confidence interval of the two populations (mixed breed/pure breed in the USA) includes the value 0. This indicates no significant difference in the frequency range of DM disease gene combinations between the two groups. If the interval contains positive values/on the right side of zero, this could indicate that mixed-breed dogs have significantly lower diseased genotype. If the interval contains negative values, this could indicate that purebred dogs have lower diseased genotype. 
 
 
-Statistical Interpretation: 
+**Statistical Interpretation:** 
 
 Null hypothesis: There are equal proportions of individuals with A2/A2 genotypes in both purebred dog population and mixed breed dog population.  
 
@@ -177,14 +181,14 @@ Observed_A2_A2_mixed <- sum(mixed_breed$`Degenerative Myelopathy (DM)` == "A2/A2
 prop.test(c(Observed_A2_A2_pure,Observed_A2_A2_mixed),c(total_rows_pure,total_rows_mixed),
           alternative = "greater", correct = FALSE) 
 ```
-Result:  
+**Result:** 
 
 p-value < 2.2e-16, which is smaller than 0.05. The 95 percent confidence interval is (0.00716,1), which does not include zero.  
 
 It is concluded that with 0.05 confidence level, we have enough evidence to reject null hypothesis, so we support the alternative hypothesis that there are more A2/A2 defective individuals in purebred dog population than mixed breed dog population. 
 
 
-<u>Chi-square test:</u>
+**Chi-square test:**
 
 For our second statistical test, we will conduct a goodness-of-fit test (chi-square test) to check whether these two populations (purebred or mixed breed) are in Hardy-Weinberg equilibrium. Hardy-Weinberg equilibrium means that if the individuals in a population follow random breeding without other external influences, after a certain number of generations the proportion of individuals of each genotype in the population reaches a certain equilibrium ratio (Mayo, 2008). A population that follows the Hardy-Weinberg equilibrium shows no signs of evolution. However, if a population deviates from this equilibrium, this indicates evolution due to selection caused by external influences (Winterer, 2021). 
 
@@ -220,9 +224,9 @@ In addition, in this specific chi-squared test to check the adaptability of Hard
 
   
 
-Statistical Interpretation: 
+**Statistical Interpretation:** 
 
-For purebred dog population: 
+**For purebred dog population:**
 
 Null hypothesis 1: In purebred dog population, the observed number of dogs for each three genotypes are equal to expected number of dogs for each three genotypes. Namely, purebred dog population is in Hardy-Weinberg equilibrium. 
 
@@ -246,7 +250,7 @@ Expected_A2_A2_pure = (proportion_A2_pure^2)*total_rows_pure
 x_pure=c(Observed_A1_A1_pure,Observed_A1_A2_pure,Observed_A2_A2_pure); p_pure=c(Expected_A1_A1_pure,Expected_A1_A2_pure,Expected_A2_A2_pure)/total_rows_pure
 chisq.test(x_pure, p=p_pure)
 ```
-Result: 
+**Result:**
 
 Chi-square = 528.66, which is much larger than the critical value (3.84, df = 1). p-value < 2.2e-16, which is much smaller than 0.05. 
 
@@ -254,7 +258,7 @@ Therefore, we have enough evidence to reject the null hypothesis that observed v
 
  
 
-For mixed breed dog population: 
+**For mixed breed dog population:** 
 
 Null hypothesis 2: In mixed dog population, the observed number of dogs for each three genotypes are equal to expected number of dogs for each three genotypes. Namely, purebred dog population is in Hard-Weinberg equilibrium. 
 
@@ -268,13 +272,13 @@ x_mixed=c(Observed_A1_A1_mixed,Observed_A1_A2_mixed,Observed_A2_A2_mixed); p_mix
 chisq.test(x_mixed, p=p_mixed)
 ```
 
-Result: 
+**Result:** 
 
 Chi-square = 82.63, which is larger than the critical value (3.84, df = 1). p-value < 2.2e-16, which is also smaller than 0.05. 
 
 Therefore, we have enough evidence to reject the null hypothesis that observed values are same as expected values. This supports the alternative hypothesis that mixed breed dog population is not in Hardy-Weinberg equilibrium. 
 
-Conclusion 
+**Conclusion**
 
 Based on two-sample proportions two-sample test, it is found that in purebred dog population, a significantly higher proportion of dogs would have homozygous genotype (A2/A2), which leads to Canine Degenerative myelopathy (DM), than mixed breed dog population. The reason for this phenomenon is mostly because inbreeding occurs more often in dog populations which are raised by dog breeders based on artificial selection than mixed breed. Therefore, it is suggested that when people choose pet dogs, if people are more concerned about the healthy condition of pet dogs rather than the external traits (such as appearance) of dogs, they should be more inclined to consider mixed breed dogs. 
 
@@ -296,7 +300,7 @@ Nevertheless, it is important not to neglect the mixed breeds in the testing, as
 
   
 
-Reference 
+**Reference:**
 
   
 
