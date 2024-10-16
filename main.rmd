@@ -142,6 +142,12 @@ The variable & parameters:
 
 In our sample, we focus on pet dogs (mixed and pure breeds) owned by dog owners/families in the United States and their disease degenerative myelopathy (DM) genotypes.  
 
+Variables: 
+
+Dog breeds: Two categories - Pure Breed dogs and Mixed breed dogs 
+
+Degenerative Myelopathy genes: Measuring three genotype class - Healthy  Homozygous, Healthy Heterozygous, Unhealthy Homozygous 
+
 Two parameters are considered:  
 
 Proportion of mixed breeds: Proportion of diseased genotypes (A2/A2) of the disease Canine Degenerative Myelopathy (DM).  
